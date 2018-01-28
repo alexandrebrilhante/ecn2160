@@ -1,4 +1,3 @@
-
 x <- 345
 
 x
@@ -62,9 +61,9 @@ plot(x, y)
 # Création de données.
 set.seed(123)
 
-x <- 1:20 + rnorm(20, sd = 3)
-z <- 1:20/4 + rnorm(20, sd = 2)
-y <- -2*x + x*z/5 + 3 + rnorm(20, sd = 4)
+x <- 1:20 + rnorm(100, sd = 3)
+z <- 1:20/4 + rnorm(100, sd = 2)
+y <- -2*x + x*z/5 + 3 + rnorm(100, sd = 4)
 
 # On créé un dataframe avec nos données.
 dat <- data.frame(x = x, y = y, z = z)
@@ -78,3 +77,13 @@ fit <- lm(dat$y ~ dat$x)
 fit
 
 summary(fit)
+
+plot(fit)
+
+fit <- lm(dat$z ~ dat$x + dat$y)
+
+fit
+
+summary(fit)
+
+plot(fit)
